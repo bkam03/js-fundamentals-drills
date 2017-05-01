@@ -21,7 +21,12 @@ var doubleArray = function(arr) {
  * @param {Array}
  * @return {Bool}
  */
-var sumArrays;
+function sumArrays(arr1,arr2) {
+  var sum = 0;
+  sum += arr1.reduce(function(prev,curr){return prev + curr;});
+  sum += arr2.reduce(function(prev,curr){return prev + curr;});
+  return sum;
+}
 
 /* #stringCount
  *
@@ -380,7 +385,7 @@ var tupleConvertToObject;
 
 module.exports = {
   doubleArray: doubleArray,
-  sumArrays: null, 
+  sumArrays: sumArrays, 
   stringCount: null,
   arrayLength: null,
   countAll: null,
