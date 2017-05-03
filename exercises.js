@@ -221,7 +221,7 @@ var multiplyAll = function(arrNum){
   var product = 1;
   arrNum.forEach(function(value){product *= value; });
   return product;
-};
+}
 
 /* #getKeys
  *
@@ -230,7 +230,13 @@ var multiplyAll = function(arrNum){
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj){
+  var keyRing = [];
+  for(var key in obj) {
+    keyRing.push(key);
+  }
+  return keyRing;
+};
 
 /* #sumAllPositive
  *
@@ -469,7 +475,7 @@ module.exports = {
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
   multiplyAll: multiplyAll,
-  getKeys: null,
+  getKeys: getKeys,
   sumAllPositive: null,
   stringCountBelowThree: null,
   countObjects: null,
@@ -481,7 +487,6 @@ module.exports = {
   tupleToObjectReverse: null,
   strToKeys: null,
   getValues: null,
-  getKeys: null,
   objectToArray: null,
   arrayToObject: null,
   arraysToObject: null,
