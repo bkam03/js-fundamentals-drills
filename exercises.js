@@ -202,9 +202,7 @@ function sumBelowTen(arr){
  */
 var moreThanTenLetters = function(strArr){
   var count = 0;
-  console.log(strArr.length);
   for(var i = 0; i < strArr.length;i++) {
-    console.log(strArr[i]);
     if(strArr[i].length > 10) {
       count++;
     }
@@ -219,7 +217,11 @@ var moreThanTenLetters = function(strArr){
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+var multiplyAll = function(arrNum){
+  var product = 1;
+  arrNum.forEach(function(value){product *= value; });
+  return product;
+};
 
 /* #getKeys
  *
@@ -466,7 +468,7 @@ module.exports = {
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
-  multiplyAll: null,
+  multiplyAll: multiplyAll,
   getKeys: null,
   sumAllPositive: null,
   stringCountBelowThree: null,
