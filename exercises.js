@@ -262,7 +262,15 @@ var sumAllPositive = function(arrNum){
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree;
+var stringCountBelowThree = function(arrStr){
+  var strCount = 0;
+  for(var i = 0; i < arrStr.length;i++) {
+    if(arrStr[i].length < 4) {
+      strCount++;
+    }
+  }
+  return strCount;
+};
 
 /* #countObjects
  *
@@ -485,7 +493,7 @@ module.exports = {
   multiplyAll: multiplyAll,
   getKeys: getKeys,
   sumAllPositive: sumAllPositive,
-  stringCountBelowThree: null,
+  stringCountBelowThree: stringCountBelowThree,
   countObjects: null,
   getObjectKeys: null,
   getObjectValues: null,
