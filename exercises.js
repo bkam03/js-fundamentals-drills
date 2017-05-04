@@ -405,14 +405,7 @@ function getValues(obj){
   return arr;
 }
 
-/* #getKeys
- *
- * Takes in an object and returns an array of the object's keys.
- *
- * @param {Object}
- * @return {Array}
- */
-var getKeys;
+
 
 /* #objectToArray
  *
@@ -422,7 +415,13 @@ var getKeys;
  * @param {Object}
  * @return {Array}
  */
-var objectToArray;
+var objectToArray = function(obj){
+  var arr = [];
+  for(var key in obj) {
+    arr.push([key,obj[key]]);
+  }
+  return arr;
+};
 
 /* #arrayToObject
  *
@@ -553,7 +552,7 @@ module.exports = {
   tupleToObjectReverse: tupleToObjectReverse,
   strToKeys: strToKeys,
   getValues: getValues,
-  objectToArray: null,
+  objectToArray: objectToArray,
   arrayToObject: null,
   arraysToObject: null,
   objectsToTuples: null,
