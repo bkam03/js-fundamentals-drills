@@ -381,7 +381,14 @@ function tupleToObjectReverse(tuple){
  * @param {Array}
  * @return {Object}
  */
-var strToKeys;
+var strToKeys = function(strArr){
+  var obj = {};
+  /*for(var i = 0; i < strArr.length;i++) {
+    obj[strArr[i]] = 0;
+  }*/
+  strArr.forEach(function(value){obj[value] = 0;});
+  return obj;
+};
 
 /* #getValues
  *
@@ -538,7 +545,7 @@ module.exports = {
   makeObjectReverse: makeObjectReverse,
   tupleToObject: tupleToObject,
   tupleToObjectReverse: tupleToObjectReverse,
-  strToKeys: null,
+  strToKeys: strToKeys,
   getValues: null,
   objectToArray: null,
   arrayToObject: null,
