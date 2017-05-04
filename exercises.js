@@ -397,7 +397,13 @@ var strToKeys = function(strArr){
  * @param {Object}
  * @return {Array}
  */
-var getValues;
+function getValues(obj){
+  var arr = [];
+  for(key in obj) {
+    arr.push(obj[key]);
+  }
+  return arr;
+}
 
 /* #getKeys
  *
@@ -546,7 +552,7 @@ module.exports = {
   tupleToObject: tupleToObject,
   tupleToObjectReverse: tupleToObjectReverse,
   strToKeys: strToKeys,
-  getValues: null,
+  getValues: getValues,
   objectToArray: null,
   arrayToObject: null,
   arraysToObject: null,
