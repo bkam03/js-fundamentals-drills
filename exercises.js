@@ -446,7 +446,18 @@ var arrayToObject = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var arraysToObject;
+function arraysToObject(arr1,arr2){
+  if(arr1.length === arr2.length) {
+    var obj = {};
+
+    for(var i = 0; i < arr1.length; i++) {
+      obj[arr1[i]] = arr2[i];
+    }
+    return obj;
+  } else {
+    return false;
+  }
+}
 
 /* #objectsToTuples
  *
@@ -558,7 +569,7 @@ module.exports = {
   getValues: getValues,
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
-  arraysToObject: null,
+  arraysToObject: arraysToObject,
   objectsToTuples: null,
   mapArrayValues: null,
   mapStringCounts: null,
