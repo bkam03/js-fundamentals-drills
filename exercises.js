@@ -467,7 +467,19 @@ function arraysToObject(arr1,arr2){
  * @param {Object}
  * @return {Array}
  */
-var objectsToTuples;
+var objectsToTuples = function(obj1, obj2){
+  console.log(arguments);
+  var arr = [];
+  function extractObj(object){
+    for(var key in object) {
+      arr.push([key,object[key]]);
+    }
+  }
+  extractObj(obj1);
+  extractObj(obj2);
+
+  return arr;
+};
 
 /* #mapArrayValues
  *
@@ -570,7 +582,7 @@ module.exports = {
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
   arraysToObject: arraysToObject,
-  objectsToTuples: null,
+  objectsToTuples: objectsToTuples,
   mapArrayValues: null,
   mapStringCounts: null,
   arrayToObjectNums: null,
