@@ -559,7 +559,11 @@ function stringToKeys(str){
  * @param {Array}
  * @return {Object}
  */
-var charCountMap;
+var charCountMap = function(strArr){
+  var obj = {};
+  strArr.forEach(function(value){obj[value]=value.length;});
+  return obj;
+};
 
 /* #frequencyMap
  *
@@ -618,7 +622,7 @@ module.exports = {
   mapStringCounts: mapStringCounts,
   arrayToObjectNums: arrayToObjectNums,
   stringToKeys: stringToKeys,
-  charCountMap: null,
+  charCountMap: charCountMap,
   frequencyMap: null,
   tupleConvertToObject: null
 }
