@@ -468,7 +468,6 @@ function arraysToObject(arr1,arr2){
  * @return {Array}
  */
 var objectsToTuples = function(obj1, obj2){
-  console.log(arguments);
   var arr = [];
   function extractObj(object){
     for(var key in object) {
@@ -543,7 +542,14 @@ var arrayToObjectNums = function(numArr){
  * @param {String}
  * @return {Object}
  */
-var stringToKeys;
+function stringToKeys(str){
+  var obj = {};
+  var arr = str.split("");
+  for(var i = 0; i < arr.length;i++) {
+    obj[arr[i]] = true;
+  }
+  return obj;
+}
 
 /* #charCountMap
  *
@@ -611,7 +617,7 @@ module.exports = {
   mapArrayValues: mapArrayValues,
   mapStringCounts: mapStringCounts,
   arrayToObjectNums: arrayToObjectNums,
-  stringToKeys: null,
+  stringToKeys: stringToKeys,
   charCountMap: null,
   frequencyMap: null,
   tupleConvertToObject: null
