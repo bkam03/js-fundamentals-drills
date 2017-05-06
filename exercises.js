@@ -572,7 +572,20 @@ var charCountMap = function(strArr){
  * @param {String}
  * @return {Bool}
  */
-var frequencyMap;
+function frequencyMap(strArr){
+  console.log(arguments);
+  var obj = {};
+  for(var i = 0;i<strArr.length;i++) {
+    var current = strArr[i];
+    if(current in obj) {
+      obj[current] += 1;
+    } else {
+      obj[current] = 1;
+    }
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #tupleConvertToObject
  *
@@ -623,6 +636,6 @@ module.exports = {
   arrayToObjectNums: arrayToObjectNums,
   stringToKeys: stringToKeys,
   charCountMap: charCountMap,
-  frequencyMap: null,
+  frequencyMap: frequencyMap,
   tupleConvertToObject: null
 }
